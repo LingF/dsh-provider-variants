@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Provider Variants",
+    "description": "Adds an \"Add another key\" action to provider cards, creating a second entry for the same model provider with its own API key."
+  }
+}

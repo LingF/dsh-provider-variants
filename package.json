@@ -1,0 +1,65 @@
+{
+  "name": "dsh-provider-variants",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "DeepSeek Harness plugin: adds an \"Add another key\" action to every pi-ai provider card, cloning the same upstream under a new provider route with its own API key.",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "dsh-bundle",
+    "deepseek-harness",
+    "cordis",
+    "provider",
+    "api-key"
+  ],
+  "license": "MIT",
+  "author": "lingf",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/LingF/dsh-provider-variants.git"
+  },
+  "homepage": "https://github.com/LingF/dsh-provider-variants#readme",
+  "bugs": {
+    "url": "https://github.com/LingF/dsh-provider-variants/issues"
+  },
+  "icon": "./icon.svg",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE",
+    ".scratch/test.mjs"
+  ],
+  "scripts": {
+    "test": "node .scratch/test.mjs"
+  },
+  "engines": {
+    "dsh": ">=0.2.1-rc.2",
+    "node": ">=20"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings-models",
+        "@deepseek-ai/dsh-api-remotes",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    }
+  }
+}

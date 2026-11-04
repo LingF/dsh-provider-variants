@@ -1,0 +1,7 @@
+# Bundle layer: one Host row whose apply() is empty. The Client module declared by
+# package.json `dsh.client` carries the Models-page card action and performs every
+# settings/credential write through the public Remote namespaces, so no Host service
+# is needed.
+- insert:
+    - id: provider-variants
+      name: dsh-provider-variants
